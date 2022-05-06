@@ -1,0 +1,9 @@
+org.springframework.cloud.bootstrap.BootstrapConfiguration=\
+com.nyquistdata.config.EtcdConfigBootstrapConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.nyquistdata.config.EtcdConfigAutoConfiguration
+org.springframework.boot.diagnostics.FailureAnalyzer=\
+com.nyquistdata.config.analyzer.EtcdConnectionFailureAnalyzer
+org.springframework.boot.env.PropertySourceLoader=\
+com.nyquistdata.config.parser.EtcdJsonPropertySourceLoader,\
+com.nyquistdata.config.parser.EtcdXmlPropertySourceLoader
