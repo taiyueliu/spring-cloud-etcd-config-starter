@@ -19,7 +19,7 @@ import org.springframework.util.StringUtils;
  * @author Nyquist Data Tech Team
  * @version 1.0.0
  * @date 2022/5/6
- * @description todo
+ * @description 初始化或者refresh event时触发
  */
 @Order(0)
 public class EtcdPropertySourceLocator implements PropertySourceLocator {

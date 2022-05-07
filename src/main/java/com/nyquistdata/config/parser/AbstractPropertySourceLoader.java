@@ -12,40 +12,16 @@ import java.util.*;
  * @author Nyquist Data Tech Team
  * @version 1.0.0
  * @date 2022/5/6
- * @description Nacos-specific loader, If need to support other methods of parsing,you need to do the
- * following steps:
- * <p>
- *  1.inherit {@link AbstractPropertySourceLoader} ;<br/>
- *  2. define the file{@code spring.factories} and append
- *  {@code org.springframework.boot.env.PropertySourceLoader=..}; <br/>
- *  3.the last step validate.
- * </p>
  */
 public abstract class AbstractPropertySourceLoader implements PropertySourceLoader {
     static final String DOT = ".";
 
-    /**
-     * Prevent interference with other loaders.Nacos-specific loader, unless the reload
-     * changes it.
-     * @param name the root name of the property source. If multiple documents are loaded
-     * an additional suffix should be added to the name for each source loaded.
-     * @param resource the resource to load
-     * @return if the resource can be loaded
-     */
+
     protected boolean canLoad(String name, Resource resource) {
         return resource instanceof EtcdByteArrayResource;
     }
 
-    /**
-     * Load the resource into one or more property sources. Implementations may either
-     * return a list containing a single source, or in the case of a multi-document format
-     * such as yaml a source for each document in the resource.
-     * @param name the root name of the property source. If multiple documents are loaded
-     * an additional suffix should be added to the name for each source loaded.
-     * @param resource the resource to load
-     * @return a list property sources
-     * @throws IOException if the source cannot be loaded
-     */
+
     @Override
     public List<PropertySource<?>> load(String name, Resource resource)
             throws IOException {
@@ -55,16 +31,7 @@ public abstract class AbstractPropertySourceLoader implements PropertySourceLoad
         return this.doLoad(name, resource);
     }
 
-    /**
-     * Load the resource into one or more property sources. Implementations may either
-     * return a list containing a single source, or in the case of a multi-document format
-     * such as yaml a source for each document in the resource.
-     * @param name the root name of the property source. If multiple documents are loaded
-     * an additional suffix should be added to the name for each source loaded.
-     * @param resource the resource to load
-     * @return a list property sources
-     * @throws IOException if the source cannot be loaded
-     */
+
     protected abstract List<PropertySource<?>> doLoad(String name, Resource resource)
             throws IOException;
 

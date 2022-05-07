@@ -4,7 +4,6 @@ package com.nyquistdata.config.utils;
  * @author Nyquist Data Tech Team
  * @version 1.0.0
  * @date 2022/5/6
- * @description todo
  */
 public class EtcdConfigUtils {
     private EtcdConfigUtils(){}

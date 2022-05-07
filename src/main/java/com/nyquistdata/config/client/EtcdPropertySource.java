@@ -12,7 +12,6 @@ import java.util.Map;
  * @author Nyquist Data Tech Team
  * @version 1.0.0
  * @date 2022/5/5
- * @description todo
  */
 public class EtcdPropertySource extends MapPropertySource {
     private final String dataId;

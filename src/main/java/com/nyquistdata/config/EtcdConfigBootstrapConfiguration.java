@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Configuration;
  * @author Nyquist Data Tech Team
  * @version 1.0.0
  * @date 2022/5/6
- * @description todo
  */
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnProperty(name = "spring.cloud.etcd.config.enabled", matchIfMissing = true)

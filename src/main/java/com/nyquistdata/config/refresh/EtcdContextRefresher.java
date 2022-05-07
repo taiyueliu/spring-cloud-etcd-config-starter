@@ -5,7 +5,6 @@ import com.nyquistdata.config.EtcdConfigProperties;
 import com.nyquistdata.config.EtcdPropertySourceRepository;
 import com.nyquistdata.config.client.EtcdPropertySource;
 import io.etcd.jetcd.ByteSequence;
-import io.etcd.jetcd.Client;
 import io.etcd.jetcd.KeyValue;
 import io.etcd.jetcd.Watch;
 import io.etcd.jetcd.watch.WatchEvent;
@@ -30,7 +29,7 @@ import java.util.function.Consumer;
  * @author Nyquist Data Tech Team
  * @version 1.0.0
  * @date 2022/5/6
- * @description todo
+ * @description 监听ETCD，当发生Put时，触发刷新事件；todo 当value的值发生变化时出发刷新
  */
 public class EtcdContextRefresher implements ApplicationListener<ApplicationReadyEvent>, ApplicationContextAware {
     private final static Logger log = LoggerFactory
